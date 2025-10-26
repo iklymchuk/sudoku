@@ -25,19 +25,19 @@ A simple Sudoku game with a JavaScript frontend and Python Flask backend.
 - Server-side validation for all moves
 
 ## Build images
-# Backend
+### Backend
 ```bash
 cd backend
 docker buildx build --platform linux/amd64 -t iklymchuk/sudoku-backend:latest --push .
 ```
 
-# Frontend
+### Frontend
 ```bash
 cd frontend
 docker buildx build --platform linux/amd64 -t iklymchuk/sudoku-frontend:latest --push .
 ```
 
-## AWS
+## AWS EC2
 ```bash
 docker pull iklymchuk/sudoku-frontend:latest
 docker pull iklymchuk/sudoku-backend:latest
