@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    image: ${DOCKER_USERNAME}/sudoku-backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8900:8900"
+    environment:
+      - FLASK_ENV=production
+      - FLASK_APP=app/main.py
+    volumes:
+      - ./backend:/app
+    networks:
+      - sudoku-network
+
+  frontend:
+    image: ${DOCKER_USERNAME}/sudoku-frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    networks:
+      - sudoku-network
+
+networks:
+  sudoku-network:
+    driver: bridge
