@@ -82,4 +82,3 @@ TOTAL                                 95      9    91%
 
 - Frontend image: https://hub.docker.com/repository/docker/iklymchuk/sudoku-frontend
 - Backend image: https://hub.docker.com/repository/docker/iklymchuk/sudoku-backend
-- AWS endpoint: http://ec2-54-191-78-71.us-west-2.compute.amazonaws.com/
